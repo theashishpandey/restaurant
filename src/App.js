@@ -17,7 +17,7 @@ function App() {
 
   <Navbar bg="dark" variant="dark">
     <Container className="Nav">
-    <Navbar.Brand href="/home">Home</Navbar.Brand>
+    <Navbar.Brand href="/">Home</Navbar.Brand>
     <Nav className="me-auto">
       <NavLink  href="/List">List Of Restaurant</NavLink>
       <NavLink href="/Detail">Features</NavLink>
@@ -41,9 +41,7 @@ function App() {
     </ul> */}
     <Route exact path='/'>
 
-    <>
-  
-</>
+   
 
     <Home/>
     </Route>
