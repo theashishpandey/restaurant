@@ -7,7 +7,7 @@ import RestaurantSearch from './components/RestaurantSearch'
 import RestaurantDetail from './components/RestaurantDetail'
 import RestauranstList from './components/RestauranstList'
 import {BrowserRouter as Router,Route} from 'react-router-dom';
-import {Navbar ,Container,NavLink,Nav} from 'react-bootstrap'
+import {Navbar ,Container,Nav} from 'react-bootstrap'
 function App() {
   return (
     <div>
@@ -19,11 +19,11 @@ function App() {
     <Container className="Nav">
     <Navbar.Brand href="/">Home</Navbar.Brand>
     <Nav className="me-auto">
-      <NavLink  href="/List">List Of Restaurant</NavLink>
-      <NavLink href="/Detail">Features</NavLink>
-      <NavLink href="/Create">Create</NavLink>
-      <NavLink href="/Search">Search</NavLink>
-      <NavLink href="/Update">Update</NavLink>
+      <Nav.Link  href="/List">List Of Restaurant</Nav.Link>
+      <Nav.Link href="/Detail">Features</Nav.Link>
+      <Nav.Link href="/Create">Create</Nav.Link>
+      <Nav.Link href="/Search">Search</Nav.Link>
+      <Nav.Link href="/Update">Update</Nav.Link>
     </Nav>
     </Container>
   </Navbar>
