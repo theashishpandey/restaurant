@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../App.css';
+
 
 class RestaurantCreate extends Component {
     constructor(){
@@ -17,7 +19,7 @@ class RestaurantCreate extends Component {
     render() {
         return (
             <div>
-               <h1> RestaurantCreate </h1>
+               <h1 className='rl-h'> Restaurant Create </h1>
                <div>
                    <input onChange={(event)=>{this.setState({name:event.target.value})}}
                    placeholder="Restaurant Name"/> <br/> <br/>

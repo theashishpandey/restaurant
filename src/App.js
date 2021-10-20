@@ -6,7 +6,7 @@ import RestaurantCreate from './components/RestaurantCreate'
 import RestaurantSearch from './components/RestaurantSearch'
 import RestaurantDetail from './components/RestaurantDetail'
 import RestauranstList from './components/RestauranstList'
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import {BrowserRouter as Router,Route} from 'react-router-dom';
 import {Navbar ,Container,Nav} from 'react-bootstrap'
 function App() {
   return (
