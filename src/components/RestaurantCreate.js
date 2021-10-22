@@ -14,13 +14,25 @@ class RestaurantCreate extends Component {
         }
     }
     create(){
-        console.warn(this.state)
-    }
+        fetch('http://localhost:3000/Restaurant',{
+            method:"Post",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(this.state)
+    }).then((result)=>{
+        result.json().then((response)=>{
+           alert("Restaurent has been added")
+        })
+    })
+} 
+
+    
     render() {
         return (
             <div>
                <h1 className='rl-h'> Restaurant Create </h1>
-               <div>
+               <div className="tl">
                    <input onChange={(event)=>{this.setState({name:event.target.value})}}
                    placeholder="Restaurant Name"/> <br/> <br/>
                     <input onChange={(event)=>{this.setState({email:event.target.value})}}

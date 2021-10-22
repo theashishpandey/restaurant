@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
+import "../App.css"
+import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit,faTrash} from '@fortawesome/free-solid-svg-icons'
 class RestauranstList extends Component {
     constructor() {
         super()
@@ -25,7 +29,7 @@ class RestauranstList extends Component {
                 {
                     this.state.list ?
                         <div>
-                            <Table striped bordered hover variant="dark">
+                            <Table className="tl" striped bordered hover variant="white">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -33,6 +37,7 @@ class RestauranstList extends Component {
                                         <th>Email</th>
                                         <th>Manager</th>
                                         <th>Rating</th>
+                                        <th>Operation</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -44,6 +49,9 @@ class RestauranstList extends Component {
                                             <td>{item.email}</td>
                                             <td>{item.author}</td>
                                             <td>{item.rating}</td>
+                                            <td>{<Link to={'/Update/'+item.id}><FontAwesomeIcon icon={faEdit} /></Link>} 
+                                            / <Link to={'/Update/'+item.id}><FontAwesomeIcon icon={faTrash} color="red" /></Link>
+                                            </td>
                                             
                                         </tr>
                                     )

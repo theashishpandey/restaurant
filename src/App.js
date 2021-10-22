@@ -8,6 +8,9 @@ import RestaurantDetail from './components/RestaurantDetail'
 import RestauranstList from './components/RestauranstList'
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import {Navbar ,Container,Nav} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faList,faHome,faPlus,faPen,faSearch,faUtensils} from '@fortawesome/free-solid-svg-icons'
+
 function App() {
   return (
     <div>
@@ -17,13 +20,13 @@ function App() {
 
   <Navbar bg="dark" variant="dark">
     <Container className="Nav">
-    <Navbar.Brand href="/">Home</Navbar.Brand>
+    <Navbar.Brand href="/"> <FontAwesomeIcon icon={faUtensils}/> Home</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link  href="/List">List Of Restaurant</Nav.Link>
-      <Nav.Link href="/Detail">Features</Nav.Link>
-      <Nav.Link href="/Create">Create</Nav.Link>
-      <Nav.Link href="/Search">Search</Nav.Link>
-      <Nav.Link href="/Update">Update</Nav.Link>
+      <Nav.Link  href="/List"><FontAwesomeIcon icon={faList} /> List Of Restaurant</Nav.Link>
+      <Nav.Link href="/Create"> <FontAwesomeIcon icon={faPlus}/> Create</Nav.Link>
+      <Nav.Link href="/Update">  <FontAwesomeIcon icon={faPen}/> Update</Nav.Link>
+      <Nav.Link href="/Search">  <FontAwesomeIcon icon={faSearch}/> Search</Nav.Link>
+     
     </Nav>
     </Container>
   </Navbar>
@@ -45,8 +48,12 @@ function App() {
 
     <Home/>
     </Route>
-    <Route path='/Update'>
-    <RestaurantUpdate/>
+    <Route path='/Update/:id'
+    render={props=>(<RestaurantUpdate
+    {...props}/>
+  )}
+    >
+    
     </Route>
     <Route path='/Create'>
     <RestaurantCreate/>
