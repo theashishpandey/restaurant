@@ -46,7 +46,7 @@ class RestaurantUpdate extends Component {
        
         return (
             <div>
-                <h1>Restaurant Update</h1>
+                <h1>Restaurant Update:</h1>
            
 
             <div className="tl">

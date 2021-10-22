@@ -9,7 +9,7 @@ import RestauranstList from './components/RestauranstList'
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import {Navbar ,Container,Nav} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList,faHome,faPlus,faPen,faSearch,faUtensils} from '@fortawesome/free-solid-svg-icons'
+import { faList,faPlus,faSearch,faUtensils} from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
     <Nav className="me-auto">
       <Nav.Link  href="/List"><FontAwesomeIcon icon={faList} /> List Of Restaurant</Nav.Link>
       <Nav.Link href="/Create"> <FontAwesomeIcon icon={faPlus}/> Create</Nav.Link>
-      <Nav.Link href="/Update">  <FontAwesomeIcon icon={faPen}/> Update</Nav.Link>
+      {/* <Nav.Link href="/Update">  <FontAwesomeIcon icon={faPen}/> Update</Nav.Link> */}
       <Nav.Link href="/Search">  <FontAwesomeIcon icon={faSearch}/> Search</Nav.Link>
      
     </Nav>

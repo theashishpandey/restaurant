@@ -31,7 +31,7 @@ class RestaurantCreate extends Component {
     render() {
         return (
             <div>
-               <h1 className='rl-h'> Restaurant Create </h1>
+               <h1 className='rl-h'> Restaurant Create: </h1>
                <div className="tl">
                    <input onChange={(event)=>{this.setState({name:event.target.value})}}
                    placeholder="Restaurant Name"/> <br/> <br/>
