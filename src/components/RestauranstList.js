@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import "../App.css"
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
@@ -15,8 +18,9 @@ class RestauranstList extends Component {
         this.getdata()
     }
 getdata(){
-    fetch("http://localhost:3000/Restaurant").then((response) => {
+    fetch("https://api.jikan.moe/v4/anime").then((response) => {
             response.json().then((result) => {
+                console.log(result,"Ashish");
 
                 this.setState({ list: result })
             })
@@ -45,40 +49,36 @@ getdata(){
     render() {
         return (
             <div>
-                <h1 className='rl-h'>Restaurants List :</h1>
+                <h1 className='rl-h'>Movies List :</h1>
                 <br />
                 {
                     this.state.list ?
                         <div>
-                            <Table className="tl" striped bordered hover variant="">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Manager</th>
-                                        <th>Rating</th>
-                                        <th>Operation</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.state.list.map((item) =>
 
-                                        <tr>
-                                            <td>{item.id}</td>
-                                            <td>{item.name}</td>
-                                            <td>{item.email}</td>
-                                            <td>{item.author}</td>
-                                            <td>{item.rating}</td>
-                                            <td>{<Link to={'/Update/' + item.id}><FontAwesomeIcon icon={faEdit} /></Link>}
-                                                <span onClick={() => this.delete(item.id)}><FontAwesomeIcon icon={faTrash} color="red" /></span>
-                                            </td>
 
-                                        </tr>
-                                    )
-                                    }
-                                </tbody>
-                            </Table>
+<Row xs={2} sm={4} className="g-4">
+
+{this.state.list.data.map((item) =>
+
+<Col>
+<Card>
+  <Card.Img variant="top" src={item.images.jpg.image_url} />
+  <Card.Body>
+    <Card.Title>{item.title}</Card.Title>
+    <Card.Title>Episodes:{item.episodes}</Card.Title>
+
+    <Card.Text>
+     {item.synopsis}
+    </Card.Text>
+    <Button href={item.trailer.url} target="_blank">Watch Trailer</Button>
+  </Card.Body>
+</Card>
+</Col>
+)
+}
+     
+    </Row>
+
                         </div>
                         : <p>Please Wait...</p>
                 }

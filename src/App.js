@@ -20,10 +20,10 @@ function App() {
 
   <Navbar bg="dark" variant="dark">
     <Container className="Nav">
-    <Navbar.Brand href="/"> <FontAwesomeIcon icon={faUtensils}/> Home</Navbar.Brand>
+    <Navbar.Brand href="/"> <FontAwesomeIcon /> Home</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link  href="/List"><FontAwesomeIcon icon={faList} /> List Of Restaurant</Nav.Link>
-      <Nav.Link href="/Create"> <FontAwesomeIcon icon={faPlus}/> Create</Nav.Link>
+      <Nav.Link  href="/List"><FontAwesomeIcon icon={faList} /> List Of Movies</Nav.Link>
+      {/* <Nav.Link href="/Create"> <FontAwesomeIcon icon={faPlus}/> Create</Nav.Link> */}
       {/* <Nav.Link href="/Update">  <FontAwesomeIcon icon={faPen}/> Update</Nav.Link> */}
       <Nav.Link href="/Search">  <FontAwesomeIcon icon={faSearch}/> Search</Nav.Link>
      
